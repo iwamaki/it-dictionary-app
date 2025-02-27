@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テストアプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .counter {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>シンプルなテストアプリ</h1>
+    <p>これはGitHubにデプロイするためのテストアプリです。</p>
+    
+    <div class="counter">カウント: <span id="count">0</span></div>
+    
+    <button id="increment">増加</button>
+    <button id="decrement">減少</button>
+    <button id="reset">リセット</button>
+    
+    <script>
+        // カウンターの初期値
+        let count = 0;
+        const countElement = document.getElementById('count');
+        
+        // ボタンの機能
+        document.getElementById('increment').addEventListener('click', () => {
+            count++;
+            countElement.textContent = count;
+        });
+        
+        document.getElementById('decrement').addEventListener('click', () => {
+            count--;
+            countElement.textContent = count;
+        });
+        
+        document.getElementById('reset').addEventListener('click', () => {
+            count = 0;
+            countElement.textContent = count;
+        });
+    </script>
+</body>
+</html>
